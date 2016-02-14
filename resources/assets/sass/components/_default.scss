@@ -1,0 +1,16 @@
+body {
+	background: $base-color;
+}
+
+nav {
+	@include gradient-vertical(#43a047, #388e3c);
+}
+
+main {
+	background: $main-color;
+	@include border-top-radius(4px);
+	@include border-right-radius(4px);
+	@include border-left-radius(4px);
+	@include border-bottom-radius(4px);
+	@include box-shadow(1px 2px 4px rgba(255,255,255,.5));
+}

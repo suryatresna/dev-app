@@ -1,0 +1,26 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "resources/assets/sass/components/variables";
+@import "resources/assets/sass/components/default";
+
+.container {
+	width: 50%;
+}
+
+.navbar {
+	border:none;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+.navbar a.navbar-brand  {
+	color: #fff !important;
+}
+
+.navbar .navbar-nav li a {
+	color: #fff !important;
+}
