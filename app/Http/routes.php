@@ -36,7 +36,4 @@ Route::get('/test/mail',[
 	'uses'	=> 'Api\MemberController@mail'
 ]);
 
-Route::get('/test',function(){
-	return "Hello";
-});
 
