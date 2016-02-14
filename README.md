@@ -2,7 +2,7 @@
 
 Development App of a simple web application where user can signup and another task-scheduling with test unit, this app built in with laravel framework.
 
-This app is task for vacancy gojek.
+This app is task for vacancy gojek. For demo you can access this url ![demo.geekdisq.co](http://demo.geekdisq.co)
 
 # Required
 
