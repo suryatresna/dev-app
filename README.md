@@ -2,6 +2,8 @@
 
 Development App of a simple web application where user can signup and another task-scheduling with test unit, this app built in with laravel framework.
 
+This app is task for vacancy gojek.
+
 # Required
 
 * PHP 5.5 or higher
@@ -22,7 +24,7 @@ After install module, the next step is migrate database with seeding raw data. B
 
 	$ php artisan migrate --seed
 
-If you want to costumize design, install 'gulp' with 'npm'
+If you want to custumize design, install 'gulp' with 'npm'
 	
 	$ npm install --global gulp
 
