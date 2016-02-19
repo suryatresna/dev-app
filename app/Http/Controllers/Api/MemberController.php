@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
-use Mail;
+use Event;
 use App\Http\Requests;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Controllers\Controller;
+use App\Events\MessageSending;
 
 use App\User;
 
@@ -31,18 +32,7 @@ class MemberController extends Controller
         $u->occupation  = $req->input('occupation');
         if($u->save())
         {
-            Mail::send('emails.signup',array('user'=>$u),function($m) use ($u){
-              $m->from('surya.tresna@geekdisq.co', 'DevApp');
-              $m->to($u->email, $u->name)->subject(trans('front.mail-signup-member-subject'));
-            });
-
-            $admins = User::where('privilege','admin')->get();
-            foreach($admins as $admin){
-                Mail::send('emails.reminder',array('user'=>$u,'admin'=>$admin),function($m) use ($admin){
-                    $m->from('surya.tresna@geekdisq.co', 'DevApp');
-                    $m->to($admin->email,$admin->name)->subject(trans('front.mail-signup-admin-subject'));
-                });
-            }
+            Event::fire(new MessageSending($u->email));
         }
 
 

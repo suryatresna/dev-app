@@ -25,7 +25,7 @@
 		{{ csrf_field() }}
 			<div class="form-group">
 				<label for="email">{{trans('front.field-email')}} *</label>
-				<input type="email" name="email" class="form-control" id="email" placeholder="{{trans('front.field-email-plc')}}">
+				<input type="email" name="email" class="form-control" id="email" placeholder="{{trans('front.field-email-plc')}}" value="{{old('email')}}">
 			</div>
 			<div class="form-group">
 				<label for="password">{{trans('front.field-password')}} *</label>
@@ -37,15 +37,15 @@
 			</div>
 			<div class="form-group">
 				<label for="name">{{trans('front.field-name')}} *</label>
-				<input type="text" name="name" class="form-control" id="name" placeholder="{{trans('front.field-name-plc')}}">
+				<input type="text" name="name" class="form-control" id="name" value="{{old('name')}}" placeholder="{{trans('front.field-name-plc')}}">
 			</div>
 			<div class="form-group">
 				<label for="phone">{{trans('front.field-phone')}} *</label>
-				<input type="text" name="phone" class="form-control" id="phone" placeholder="{{trans('front.field-phone-plc')}}">
+				<input type="text" name="phone" class="form-control" id="phone" value="{{old('phone')}}"placeholder="{{trans('front.field-phone-plc')}}">
 			</div>
 			<div class="form-group">
 				<label for="occupation">{{trans('front.field-occupation')}} *</label>
-				<input type="text" name="occupation" class="form-control" id="occupation" placeholder="{{trans('front.field-occupation-plc')}}">
+				<input type="text" name="occupation" class="form-control" id="occupation" value="{{old('occupation')}}"placeholder="{{trans('front.field-occupation-plc')}}">
 			</div>
 			<div class="form-action">
 				<button class="btn btn-success">{{trans('front.btn-submit')}}</button>
