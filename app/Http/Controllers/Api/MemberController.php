@@ -8,7 +8,7 @@ use Event;
 use App\Http\Requests;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Controllers\Controller;
-use App\Events\MessageSending;
+use App\Events\UserRegistered;
 
 use App\User;
 
@@ -32,7 +32,7 @@ class MemberController extends Controller
         $u->occupation  = $req->input('occupation');
         if($u->save())
         {
-            Event::fire(new MessageSending($u->email));
+            Event::fire(new UserRegistered($u->email));
         }
 
 

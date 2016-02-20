@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\MessageSending;
+use App\Events\UserRegistered;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -21,10 +21,10 @@ class LogSendMessage
     /**
      * Handle the event.
      *
-     * @param  MessageSending  $event
+     * @param  UserRegistered  $event
      * @return void
      */
-    public function handle(MessageSending $event)
+    public function handle(UserRegistered $event)
     {
         //
     }

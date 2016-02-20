@@ -3,18 +3,16 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\User;
 
-class UserTest extends TestCase
+class TestEventMail extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testDatabase()
+    public function testEvent()
     {
-    	$users = factory(App\User::class)->create();
-        $this->seeInDatabase('users',['email'	=> $users->email]);
+        $this->expectsEvents(App\Event\UserRegistered::class);
     }
 }
