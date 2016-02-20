@@ -20,7 +20,7 @@ Install module by composer
 
 	$ composer install
 
-After install module, the next step is migrate database with seeding raw data. Before that you have make sure creating database in your system and setup file Environment ('.env'). Then execute this command
+After install module, the next step is migration database with seeding raw data. Before that you have make sure creating database in your system and setup file Environment ('.env'). Then execute this command
 
 	$ php artisan migrate --seed
 
@@ -56,5 +56,13 @@ After install phpunit, you can test app by command.
 
 There are execute in directory /test. The files test it is 
 * InterfaceTest of Interface test to test link active and action form.
-* UserTest of Test data user by check in database.
+* UserTest of Test data user by create and check in database has user created.
+* TestEventMail of test email sending to user if has registered.
 
+# Event and Scheduler by Console
+
+For testing Event and Schedule, you could using this command.
+
+	$ php artisan emails.send -m='Hello World'
+
+This command make message and broadcast message to subscriber. in Kernel.php you will see this command was execute in 'daily'.
